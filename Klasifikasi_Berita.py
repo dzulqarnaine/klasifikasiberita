@@ -39,16 +39,18 @@ def halaman_penjelasan():
     # Tampilkan judul di tengah halaman
     st.markdown("""
     <div style="text-align: center;">
-        <h1>Penjelasan Kelas Gambar</h1>
+        <h1>Penjelasan Dataset</h1>
     </div>
     """, unsafe_allow_html=True)
 
     # Path ke gambar
     image_paths = [
-        r"C:\Thonny\Thonny\Klasifikasi Berita\Train Data (83).jpg",
-        r"C:\Thonny\Thonny\Klasifikasi Berita\Train Data (87).jpg",
-        r"C:\Thonny\Thonny\Klasifikasi Berita\Train Data (224).jpg",
-        r"C:\Thonny\Thonny\Klasifikasi Berita\Train Data (99).jpg"
+    "https://github.com/dzulqarnaine/klasifikasiberita/blob/master/Train Data (224).jpg",
+    "https://github.com/dzulqarnaine/klasifikasiberita/blob/master/Train Data (83).jpg",
+    "https://github.com/dzulqarnaine/klasifikasiberita/blob/master/Train Data (87).jpg",
+    'https://github.com/dzulqarnaine/klasifikasiberita/blob/master/Train Data (99).jpg'
+
+
     ]
     
     descriptions = [
