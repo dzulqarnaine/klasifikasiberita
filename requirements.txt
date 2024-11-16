@@ -1,6 +1,5 @@
 streamlit==1.40.1
-numpy
-tensorflow==3.8.10
+tensorflow==2.13.0
 numpy
 pillow
 streamlit-option-menu
