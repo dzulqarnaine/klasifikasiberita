@@ -5,3 +5,8 @@ import tensorflow
 from tensorflow import keras
 from PIL import Image
 from streamlit_option_menu import option_menu
+streamlit
+tensorflow==2.10.0
+numpy
+pillow
+streamlit-option-menu
