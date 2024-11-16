@@ -1,6 +1,5 @@
 streamlit==1.40.1
 numpy
-pickle
 tensorflow==3.8.10
 numpy
 pillow
