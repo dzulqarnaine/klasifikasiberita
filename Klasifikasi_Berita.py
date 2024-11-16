@@ -6,7 +6,7 @@ from PIL import Image
 from streamlit_option_menu import option_menu
 
 # Muat model
-model = keras.models.load_model('my_model.h5')
+model = keras.models.load_model('model.h5')
 
 # Muat tokenizer
 with open('tokenizer.pickle', 'rb') as handle:
