@@ -45,10 +45,10 @@ def halaman_penjelasan():
 
     # Path ke gambar
     image_paths = [
-    "https://raw.githubusercontent.com/dzulqarnaine/klasifikasiberita/master/Train%20Data%20(83).jpg",
-    "https://raw.githubusercontent.com/dzulqarnaine/klasifikasiberita/master/Train%20Data%20(87).jpg",
-    "https://raw.githubusercontent.com/dzulqarnaine/klasifikasiberita/master/Train%20Data%20(224).jpg",
-    "https://raw.githubusercontent.com/dzulqarnaine/klasifikasiberita/master/Train%20Data%20(99).jpg"
+    "Train Data (224).jpg",
+    "Train Data (83).jpg",
+    "Train Data (87).jpg",
+    "Train Data (99).jpg"
 ]
     
     descriptions = [
