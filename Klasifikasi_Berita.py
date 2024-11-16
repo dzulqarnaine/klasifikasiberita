@@ -45,13 +45,11 @@ def halaman_penjelasan():
 
     # Path ke gambar
     image_paths = [
-    "https://github.com/dzulqarnaine/klasifikasiberita/blob/master/Train Data (224).jpg",
-    "https://github.com/dzulqarnaine/klasifikasiberita/blob/master/Train Data (83).jpg",
-    "https://github.com/dzulqarnaine/klasifikasiberita/blob/master/Train Data (87).jpg",
-    'https://github.com/dzulqarnaine/klasifikasiberita/blob/master/Train Data (99).jpg'
-
-
-    ]
+    "https://raw.githubusercontent.com/dzulqarnaine/klasifikasiberita/master/Train%20Data%20(83).jpg",
+    "https://raw.githubusercontent.com/dzulqarnaine/klasifikasiberita/master/Train%20Data%20(87).jpg",
+    "https://raw.githubusercontent.com/dzulqarnaine/klasifikasiberita/master/Train%20Data%20(224).jpg",
+    "https://raw.githubusercontent.com/dzulqarnaine/klasifikasiberita/master/Train%20Data%20(99).jpg"
+]
     
     descriptions = [
         """Pengamatan visual yang cermat terhadap keseluruhan gambar tidak
