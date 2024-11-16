@@ -94,10 +94,11 @@ def halaman_penjelasan():
     
     # Tampilkan gambar dan penjelasan menggunakan layout kolom
     for i in range(4):
+        image = Image.open(image_paths[i])
         col1, col2 = st.columns([1, 2])
         
         with col1:
-            st.image(image_urls[i], use_container_width=True)
+            st.image(image, use_container_width=True)
         
         with col2:
             st.write(descriptions[i])
