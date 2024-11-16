@@ -1,11 +1,6 @@
-import streamlit
-import numpy
-import pickle
-import tensorflow
-from tensorflow import keras
-from PIL import Image
-from streamlit_option_menu import option_menu
-streamlit
+streamlit==1.40.1
+numpy
+pickle
 tensorflow==3.8.10
 numpy
 pillow
