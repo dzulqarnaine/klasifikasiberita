@@ -12,17 +12,17 @@ model = keras.models.load_model('my_model.h5')
 with open('tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
 
-# # Muat encoder
-# with open('encoder.pickle', 'rb') as handle:
-#     encoder = pickle.load(handle)
+# Muat encoder
+with open('encoder.pickle', 'rb') as handle:
+    encoder = pickle.load(handle)
 
-# # Konfigurasi halaman
-# st.set_page_config(
-#     page_title="Klasifikasi Gambar",
-#     page_icon=":📰:",
-#     layout="wide",
-#     initial_sidebar_state="expanded"
-# )
+# Konfigurasi halaman
+st.set_page_config(
+    page_title="Klasifikasi Gambar",
+    page_icon=":📰:",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 # Buat menu utama di sidebar
 with st.sidebar:
