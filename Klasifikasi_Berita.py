@@ -39,83 +39,62 @@ def halaman_penjelasan():
     # Tampilkan judul di tengah halaman
     st.markdown("""
     <div style="text-align: center;">
-        <h1>Penjelasan Dataset</h1>
+        <h1>KLASIFIKASI BERITA</h1>
     </div>
     """, unsafe_allow_html=True)
 
     # Path ke gambar
     image_paths = [
-    "Train Data (224).jpg",
-    "Train Data (83).jpg",
-    "Train Data (87).jpg",
-    "Train Data (99).jpg"
-]
-    
-    descriptions = [
-        """Pengamatan visual yang cermat terhadap keseluruhan gambar tidak
-        memberikan indikasi adanya tanda-tanda kebakaran yang biasanya 
-        tampak dalam situasi darurat, seperti jejak hangus pada permukaan,
-        bekas-bekas material yang terbakar, atau adanya asap tipis yang
-        membubung dari area tertentu. Selain itu, tidak ada tanda-tanda
-        kehadiran sumber panas yang tidak biasa, seperti kilatan cahaya atau
-        perubahan warna yang dapat menandakan suhu tinggi. Seluruh elemen yang
-        terlihat dalam gambar tampak normal dan tidak menunjukkan aktivitas yang
-        berpotensi berbahaya. Oleh karena itu, dapat disimpulkan dengan tingkat 
-        keyakinan yang tinggi bahwa kondisi di lokasi tersebut saat ini sepenuhnya
-        aman dan tidak menunjukkan adanya ancaman kebakaran yang perlu diwaspadai.""",
-
-        """Gambar ini menunjukkan keberadaan api yang mendominasi area tersebut, 
-        dengan nyala api yang jelas terlihat serta indikasi bahwa api tersebut dapat
-        berkembang dengan cepat jika tidak segera dikendalikan. Warna-warna cerah 
-        seperti merah dan oranye mencolok mengindikasikan bahwa api berada dalam fase 
-        aktif, dengan kemungkinan bahaya besar terhadap lingkungan sekitarnya jika tidak
-        diatasi dengan segera.""",
-
-        """Gambar ini secara jelas menunjukkan dominasi adanya asap yang tebal dan membubung
-        ke udara, menciptakan suasana yang misterius dan mendalam. Asap tersebut tampak 
-        menyelimuti area sekitarnya, dengan warna abu-abu gelap yang menunjukkan potensi adanya 
-        kebakaran atau sumber panas lainnya di dekatnya. Kehadiran asap ini bisa menjadi indikasi 
-        bahwa suatu proses pembakaran sedang berlangsung, baik itu berupa kebakaran kecil, 
-        pembakaran sampah, atau mungkin bahkan aktivitas industri. Dengan demikian, gambaran 
-        ini mengundang perhatian dan menimbulkan pertanyaan tentang asal-usul asap tersebut 
-        dan potensi bahayanya terhadap lingkungan sekitar.""",
-
-        """Gambar ini secara mencolok menunjukkan keberadaan api dan asap yang muncul secara 
-        bersamaan, menciptakan pemandangan yang dramatis dan penuh ketegangan. Nyala api yang 
-        berkobar dengan warna merah dan oranye yang mencolok tampak menari-nari di antara kepulan 
-        asap yang tebal dan gelap, yang membubung tinggi ke langit. Kombinasi antara api yang aktif 
-        dan asap yang menyelimuti area tersebut memberikan indikasi bahwa suatu proses pembakaran 
-        yang signifikan sedang berlangsung. Selain itu, asap yang terlihat dapat mengisyaratkan 
-        potensi bahaya yang lebih besar, karena dapat menandakan adanya material yang terbakar atau 
-        zat berbahaya di sekitarnya. Pemandangan ini tidak hanya menarik perhatian, tetapi juga 
-        menimbulkan kekhawatiran mengenai keselamatan dan potensi ancaman yang ditimbulkan oleh 
-        kebakaran yang mungkin terjadi di lokasi tersebut"""
+       "bbc.jpeg"
     ]
     
+    descriptions = [
+        """BBC (British Broadcasting Corporation) adalah salah satu media penyiaran terbesar dan paling kredibel di dunia, yang menyediakan berita berkualitas tinggi dengan cakupan global. Berita-berita yang dihasilkan BBC mencakup berbagai topik seperti bisnis, teknologi, politik, olahraga, dan hiburan, yang ditulis dengan gaya profesional dan informatif. Berita-berita ini tidak hanya menjadi sumber informasi penting bagi masyarakat umum, tetapi juga menjadi rujukan dalam analisis media dan penelitian akademis. Dengan volume berita yang terus meningkat, pengelolaan dan pengklasifikasian konten berita secara otomatis menjadi semakin penting untuk mempermudah akses dan analisis."""
+    ]
+
+    # Gambar baru yang ingin ditambahkan di bawah deskripsi
+    new_image_path = "nlp.jpg"  
+
     # Tampilkan gambar dan penjelasan menggunakan layout kolom
-    for i in range(4):
+    for i in range(len(image_paths)):
         image = Image.open(image_paths[i])
-        col1, col2 = st.columns([1, 2])
+        
+        # Mengatur kolom dengan lebar yang sama
+        col1 = st.columns(1)[0]  # Menggunakan satu kolom untuk gambar dan teks
         
         with col1:
-            st.image(image, use_container_width=True)
-        
-        with col2:
-            st.write(descriptions[i])
-    
-    # st.write("SEMOGA MENANG")
+            # Menampilkan gambar dengan ukuran yang sesuai
+            st.image(image, use_container_width=True)  # Atur ukuran gambar agar sesuai dengan kolom
+            
+            # Menampilkan deskripsi di bawah gambar dengan justify
+            st.markdown(f"<p style='text-align: justify;'>{descriptions[i]}</p>", unsafe_allow_html=True)
+
+            # Menampilkan gambar baru dan teks tambahan secara bersebelahan
+            col2, col3 = st.columns(2)  # Dua kolom untuk gambar dan teks tambahan
+            
+            with col2:
+                # Menampilkan gambar baru
+                new_image = Image.open(new_image_path)
+                st.image(new_image, use_container_width=True)  # Atur ukuran gambar baru agar sesuai dengan kolom
+            
+            with col3:
+                # Menampilkan teks tambahan
+                additional_text = """
+                Dataset BBC menawarkan solusi dengan menyediakan teks berita yang diklasifikasikan ke dalam lima kategori utama: business, tech, politic, sport, dan entertainment. Setiap kategori mencerminkan tema spesifik, seperti perkembangan pasar keuangan dalam kategori bisnis atau isu teknologi mutakhir dalam kategori teknologi. Klasifikasi ini memberikan dasar untuk pengembangan model pembelajaran mesin yang mampu mengelompokkan berita secara otomatis, sehingga memungkinkan aplikasi seperti portal berita pintar atau sistem rekomendasi konten berbasis minat. Dengan pendekatan ini, dataset BBC menjadi sumber yang relevan untuk eksplorasi NLP dan pengembangan solusi cerdas di era informasi digital.
+                """
+                st.markdown(f"<p style='text-align: justify;'>{additional_text}</p>", unsafe_allow_html=True)
 
 # Fungsi untuk Halaman 2 (Klasifikasi Berita)
 def halaman_klasifikasi():
-    st.title("Klasifikasi Berita")
-    input_text = st.text_area("Masukkan teks yang ingin diklasifikasikan:")
+    st.markdown("<h1 style='text-align: center;'>Klasifikasi Berita</h1>", unsafe_allow_html=True)
+    input_text = st.text_area("Masukkan teks berita yang ingin diklasifikasikan (English):")
 
     if st.button("Klasifikasikan"):
         input_matrix = tokenizer.texts_to_matrix([input_text])
         prediction = model.predict(input_matrix)
         predicted_label_index = np.argmax(prediction)
         predicted_label = encoder.inverse_transform([predicted_label_index])
-        st.write(f"Hasil Klasifikasi: {predicted_label[0]}")
+        st.markdown(f"<h3 style='text-align: center;'>Hasil Klasifikasi: {predicted_label[0]}</h3>", unsafe_allow_html=True)
 
 # Menampilkan halaman berdasarkan pilihan
 if selected == "Tentang":
